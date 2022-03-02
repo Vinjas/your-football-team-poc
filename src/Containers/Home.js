@@ -1,26 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes, Link } from "react-router-dom";
 import Fade from 'react-reveal/Fade';
 
-import NewTeams from './NewTeam';
+import TeamLists from './TeamList';
 import MyTeams from './MyTeams';
 
 const Home = () => {
+    /* useEffect(() => {
+
+    }) */
+    
     return (
         <div>
             <Fade>
                 <h1>Your Adidas Team</h1>
 
-                <nav>
+                <div>
                     <Link to="my-teams">My Teams</Link>
-                    <Link to="create-team">Create a New Team</Link>
-                </nav>
+                </div>
+                
+                <div>
+                    <Link to="teams">Create a New Team</Link>
+                </div>
             </Fade>
 
-            <Routes>
-                <Route path="my-teams" element={<MyTeams />} />
-                <Route path="create-team" element={<NewTeams />} />
-            </Routes>
         </div>
     )
 }

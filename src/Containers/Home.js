@@ -1,28 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, useNavigate } from "react-router-dom";
 import Fade from 'react-reveal/Fade';
 
-import TeamLists from './TeamList';
-import MyTeams from './MyTeams';
+import NavBar from '../Components/nav/NavBar';
+import NewTeamButton from '../Components/buttons/NewTeamButton';
 
 const Home = () => {
-    /* useEffect(() => {
 
-    }) */
-    
     return (
         <div>
             <Fade>
                 <h1>Your Adidas Team</h1>
 
                 <div>
-                    <Link to="my-teams">My Teams</Link>
+                    <strong>
+                        <Link to="my-teams">My Teams</Link>
+                    </strong>
                 </div>
-                
+
                 <div>
-                    <Link to="teams">Create a New Team</Link>
+                    <NewTeamButton />
                 </div>
+
             </Fade>
+
+            <NavBar />
 
         </div>
     )

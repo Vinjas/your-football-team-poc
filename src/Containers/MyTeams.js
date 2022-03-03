@@ -1,62 +1,55 @@
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 
-import { incrementDefender, decrementDefender } from "../redux/defendersCounterSlice";
-import { incrementMidfielders, decrementMidfielders } from "../redux/midfieldersCounterSlice";
-import { incrementAttackers, decrementAttackers } from "../redux/attackersCounterSlice";
-import { incrementGoalkeepers, decrementGoalkeepers } from "../redux/goalkeepersCounterSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { Fade } from "react-reveal";
+import { useNavigate } from "react-router-dom";
+
+import NavBar from "../Components/nav/NavBar";
+import SavedTeam from "../Components/SavedTeam";
+import NewTeamButton from "../Components/buttons/NewTeamButton";
+
+import { resetDefender } from "../redux/reducers/defendersCounterSlice";
+import { resetMidfielders } from "../redux/reducers/midfieldersCounterSlice";
+import { resetAttackers } from "../redux/reducers/attackersCounterSlice";
+import { resetGoalkeepers } from "../redux/reducers/goalkeepersCounterSlice";
+import { resetPlayersReducer } from "../redux/reducers/managePlayerSlice";
+
+import { deleteTeam } from "../redux/reducers/savedTeamsSlice";
 
 const MyTeams = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const defendersCount = useSelector((state) => state.defendersCounter.value);
-    const midfieldersCount = useSelector((state) => state.midfieldersCounter.value);
-    const attackersCount = useSelector((state) => state.attackersCounter.value);
-    const goalkeepersCount = useSelector((state) => state.goalkeepersCounter.value);
-    
+    const createNewTeam = () => {
+        dispatch(resetDefender())
+        dispatch(resetAttackers())
+        dispatch(resetGoalkeepers())
+        dispatch(resetMidfielders())
+        dispatch(resetPlayersReducer())
+        navigate("/teams")
+    }
+
+    const savedTeams = useSelector((state) => state.savedTeams.value);
+
     return (
         <div>
-            <h1>My adidas Team</h1>
+            <h1>My Teams</h1>
 
-            {/* DEFENDERS */}
-            <div>
-                <h2>Defenders {defendersCount}</h2>
-                
-                <button onClick={() => dispatch(incrementDefender())}>Añadir</button>
-                <button onClick={() => dispatch(decrementDefender())}>Quitar</button>
-            </div>
+            <NewTeamButton />
 
-            {/* MIDFIELDERS */}
-            <div>
-                <h2>Midfielders {midfieldersCount}</h2>
-                
-                <button onClick={() => dispatch(incrementMidfielders())}>Añadir</button>
-                <button onClick={() => dispatch(decrementMidfielders())}>Quitar</button>
-            </div>
-
-            {/* ATTACKERS */}
-            <div>
-                <h2>Attackers {attackersCount}</h2>
-                
-                <button onClick={() => dispatch(incrementAttackers())}>Añadir</button>
-                <button onClick={() => dispatch(decrementAttackers())}>Quitar</button>
-            </div>
-
-            {/* GOALKEEPERS */}
-            <div>
-                <h2>Goalkeepers {goalkeepersCount}</h2>
-                
-                <button onClick={() => dispatch(incrementGoalkeepers())}>Añadir</button>
-                <button onClick={() => dispatch(decrementGoalkeepers())}>Quitar</button>
-            </div>
-
-            <div>
-                <Link to="/">Volver</Link>
-            </div>
-
+            {savedTeams.map((team) => {
+                return (
+                    <div>
+                        <Fade bottom>
+                            <SavedTeam
+                                key={team.date} {...team}
+                                name={team.name}
+                                players={team.playersData}
+                            />
+                        </Fade>
+                    </div>
+                )
+            })}
         </div>
-
-
     )
 }
 

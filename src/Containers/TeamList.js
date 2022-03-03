@@ -4,6 +4,8 @@ import { Fade } from "react-reveal";
 
 import TeamCard from "../Components/TeamCard";
 import getSpainTeams from "../API/getSpainTeams";
+import NavBar from "../Components/nav/NavBar";
+import CurrentTeamBar from "../Components/nav/CurrentTeamBar";
 
 const TeamLists = () => {
     const [teams, setTeams] = useState([]);
@@ -17,6 +19,9 @@ const TeamLists = () => {
 
     return (
         <div>
+
+            <CurrentTeamBar />
+
             <h1>Teams</h1>
 
             <div className="">
@@ -24,16 +29,19 @@ const TeamLists = () => {
                     return  (
                         <LazyLoad key={team.id}>
                             <Fade bottom>
-                                <TeamCard 
-                                    key={team.id} {...team} 
+                                <TeamCard
+                                    key={team.id} {...team}
                                     id={team.id}
                                     name={team.name}
                                 />
                             </Fade>
                         </LazyLoad>
-                    )}
-                )}
-            </div> 
+                    )
+                })}
+            </div>
+
+            <NavBar />
+
         </div>
     )
 }

@@ -12,8 +12,14 @@ export const defendersCounterSlice = createSlice({
         decrementDefender: (state) => {
         state.value -= 1
         },
+        setDefender: (state, action) => {
+            state.value = action.payload
+        },
+        resetDefender: (state) => {
+            state.value = 0
+        },
     },
 });
 
-export const { incrementDefender, decrementDefender } = defendersCounterSlice.actions;
+export const { incrementDefender, decrementDefender, resetDefender, setDefender } = defendersCounterSlice.actions;
 export default defendersCounterSlice.reducer;

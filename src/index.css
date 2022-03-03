@@ -1,3 +1,17 @@
-
+.player-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.player-card--inactive {
+  background: grey;
+}
+.player-card--button {
+  display: block;
+}
+.player-card--button_inactive {
+  display: none;
+}
 
 /*# sourceMappingURL=index.css.map */

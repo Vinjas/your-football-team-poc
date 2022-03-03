@@ -5,6 +5,8 @@ import { Fade } from "react-reveal";
 
 import getTeamDetails from "../API/getTeamDetails";
 import PlayerCard from "../Components/PlayerCard";
+import NavBar from "../Components/nav/NavBar";
+import CurrentTeamBar from "../Components/nav/CurrentTeamBar";
 
 const TeamContainer = (props) => {
     const location = useLocation();
@@ -22,10 +24,12 @@ const TeamContainer = (props) => {
     
     return (
         <div>
+            <CurrentTeamBar />
+
             <h1>{teamDetails.name}</h1>
             <h2>{teamDetails.shortName}</h2>
 
-            <img src={teamDetails.crestUrl}></img>
+            <img src={teamDetails.crestUrl} alt={teamDetails.name}></img>
 
             <div>
                 {players.map((player) => {
@@ -33,11 +37,13 @@ const TeamContainer = (props) => {
                         return  (
                         <LazyLoad key={player.id}>
                             <Fade bottom>
-                                <PlayerCard 
-                                    key={player.id} {...player} 
+                                <PlayerCard
+                                    key={player.id} {...player}
                                     id={player.id}
                                     name={player.name}
                                     position={player.position}
+                                    team={teamDetails.name}
+                                    teamFlag={teamDetails.crestUrl}
                                 />
                             </Fade>
                         </LazyLoad>
@@ -46,6 +52,8 @@ const TeamContainer = (props) => {
                     }
                 )}
             </div>
+
+            <NavBar />
 
         </div>
     )

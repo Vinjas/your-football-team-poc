@@ -12,8 +12,14 @@ export const midfieldersCounterSlice = createSlice({
         decrementMidfielders: (state) => {
         state.value -= 1
         },
+        setMidfielders: (state, action) => {
+            state.value = action.payload
+        },
+        resetMidfielders: (state) => {
+            state.value = 0
+        },
     },
 });
 
-export const { incrementMidfielders, decrementMidfielders } = midfieldersCounterSlice.actions;
+export const { incrementMidfielders, decrementMidfielders, resetMidfielders, setMidfielders } = midfieldersCounterSlice.actions;
 export default midfieldersCounterSlice.reducer;

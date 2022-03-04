@@ -8,7 +8,7 @@ For that, the user needs a way to display the selected players from the differen
 I used the free hosting and deployment site https://surge.sh/ for the temporary deployment of the app.
 
 It's currently deployed in the following link:
-**http://your-adidas-team-daniel-vinyas.surge.sh/**
+**https://your-adidas-team-dvt.surge.sh/**
 
 ## Author notes
 I used a mobile first approach for the design.

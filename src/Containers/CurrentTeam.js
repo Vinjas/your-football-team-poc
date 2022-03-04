@@ -27,9 +27,9 @@ const CurrentTeam = () => {
 
     return (
         <div className="teamContainer">
-            <div>
-                <CurrentTeamBar />
+            <CurrentTeamBar />
 
+            <div>
                 <div className="home--header">
                     <h1 className="home--title text--bold text--white text--title">{teamName}</h1>
                 </div>

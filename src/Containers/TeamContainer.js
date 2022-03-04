@@ -30,9 +30,9 @@ const TeamContainer = () => {
 
     return (
         <div className="teamContainer">
-            <div>
-                <CurrentTeamBar />
+            <CurrentTeamBar />
 
+            <div>
                 <div className="teamContainer--header">
                     <h1>{teamDetails.name}</h1>
                 </div>

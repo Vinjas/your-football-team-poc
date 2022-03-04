@@ -19,9 +19,9 @@ const TeamLists = () => {
 
     return (
         <div className="teamList">
-            <div>
-                <CurrentTeamBar />
+            <CurrentTeamBar />
 
+            <div>
                 <div className="teamList--header">
                     <h1>All Teams</h1>
                 </div>

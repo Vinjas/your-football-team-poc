@@ -8,16 +8,16 @@ const ModalDeleteTeam = (props) => {
 
     return (
         <Popup trigger={open => (
-            <button className="button">DELETE TEAM</button>)}
+            <button className="button-delete text--semibold">DELETE</button>)}
             modal
         >
             {close => (
-            <div className="modal">
+            <div className="modal text--center">
                 <button className="close" onClick={close}>
                     &times;
                 </button>
-                <div className="header"> DELETE TEAM </div>
-                    <div className="content">
+                <div className="header text--semibold"> Delete team? </div>
+                    <div className="content text--small text--muted">
                     {' '}
                     Are you sure you want to delete your team?
                 </div>
@@ -25,7 +25,7 @@ const ModalDeleteTeam = (props) => {
 
                 <div className="actions">
                     <button
-                        className="button"
+                        className="button-delete-modal"
                         onClick={() => dispatch(deleteTeam(props.teamID))}
                         >
                         DELETE TEAM

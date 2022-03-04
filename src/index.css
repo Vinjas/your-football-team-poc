@@ -36,7 +36,7 @@ html, body, #root {
 }
 .text--small {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 20px;
 }
 .text--medium {
   font-size: 16px;
@@ -85,13 +85,13 @@ html, body, #root {
   max-width: 100%;
   width: 175px;
   height: 110px;
-  border: solid 5px #f5f5f5;
+  border: solid 5px #f1f1f1;
   border-radius: 10px;
-  box-shadow: 0px 5px 15px -5px #f5f5f5;
+  box-shadow: 0px 5px 15px -5px #f1f1f1;
   margin: 7px;
 }
 .player-card--inactive {
-  background: #f5f5f5;
+  background: #f1f1f1;
 }
 .player-card--button {
   display: flex;
@@ -109,14 +109,14 @@ html, body, #root {
 }
 
 .modal {
-  font-size: 12px;
+  padding: 10px;
+  color: #26253b;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal > .header {
-  width: 100%;
-  border-bottom: 1px solid gray;
-  font-size: 18px;
-  text-align: center;
   padding: 5px;
 }
 
@@ -136,14 +136,47 @@ html, body, #root {
   cursor: pointer;
   position: absolute;
   display: block;
-  padding: 2px 5px;
+  padding: 2px 6px;
   line-height: 20px;
   right: -10px;
   top: -10px;
-  font-size: 24px;
-  background: #ffffff;
-  border-radius: 18px;
-  border: 1px solid #cfcece;
+  font-size: 16px;
+  background: #201f3a;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+}
+
+.modal > .input {
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 3px #cacaca;
+  font-family: "Open Sans", "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  margin: 10px 0;
+}
+
+.button-save {
+  background-color: #7eaa7c;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.button-save:hover {
+  background-color: #2c6664;
+}
+
+.button-delete-modal {
+  background-color: #e7563c;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.button-delete-modal:hover {
+  background-color: #af4835;
 }
 
 .button-main {
@@ -172,6 +205,35 @@ html, body, #root {
   background-color: #7eaa7c;
 }
 
+.button-delete {
+  border: solid 2px #cacaca;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #cacaca;
+  font-family: "Open Sans", "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  background-color: transparent;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.button-delete:hover {
+  background-color: #cacaca;
+  color: #fff;
+}
+
+.button-load {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  color: #fff;
+  font-family: "Open Sans", "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  background-color: #2c6664;
+  cursor: pointer;
+}
+.button-load:hover {
+  background-color: #7eaa7c;
+}
+
 .teamCard {
   display: flex;
   flex-direction: column;
@@ -180,11 +242,11 @@ html, body, #root {
   width: 150px;
   height: 170px;
   cursor: pointer;
-  border: solid 5px #f5f5f5;
+  border: solid 5px #f1f1f1;
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
-  box-shadow: 0px 5px 15px -5px #f5f5f5;
+  box-shadow: 0px 5px 15px -5px #f1f1f1;
 }
 .teamCard--img {
   max-width: 100%;
@@ -195,7 +257,7 @@ html, body, #root {
 .savedTeamCard {
   border: solid 5px #cacaca;
   border-radius: 10px;
-  background-color: #f5f5f5;
+  background-color: #f1f1f1;
   box-shadow: 0px 5px 15px -5px #cacaca;
   margin: 10px 20px;
   padding: 20px;
@@ -222,6 +284,7 @@ html, body, #root {
 }
 .savedTeamCard--players-column {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 5px 0;
 }
@@ -235,6 +298,7 @@ html, body, #root {
   display: flex;
   justify-content: space-between;
 }
+
 /* layout */
 .navBar {
   color: #fff;
@@ -286,6 +350,19 @@ html, body, #root {
   position: sticky;
   top: 0;
   z-index: 999;
+}
+.teamBar--save {
+  border: none;
+  border-radius: 5px;
+  padding: 0 15px;
+  color: #445278;
+  background-color: #fff;
+  font-family: "Open Sans", "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  cursor: pointer;
+}
+.teamBar--save:hover {
+  background-color: #7eaa7c;
+  color: #fff;
 }
 
 /* pager */
@@ -363,7 +440,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 5px #f5f5f5;
+  border: solid 5px #f1f1f1;
   border-radius: 10px;
   margin: 15px;
   padding: 10px;

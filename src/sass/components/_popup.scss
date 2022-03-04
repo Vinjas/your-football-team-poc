@@ -1,33 +1,85 @@
 .modal {
-    font-size: 12px;
+    padding: 10px;
+
+    color: $black;
+
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
 }
+
 .modal > .header {
-    width: 100%;
-    border-bottom: 1px solid gray;
-    font-size: 18px;
-    text-align: center;
     padding: 5px;
 }
+
 .modal > .content {
     width: 100%;
     padding: 10px 5px;
 }
+
 .modal > .actions {
     width: 100%;
     padding: 10px 5px;
     margin: auto;
     text-align: center;
 }
+
 .modal > .close {
     cursor: pointer;
+
     position: absolute;
     display: block;
-    padding: 2px 5px;
+
+    padding: 2px 6px;
     line-height: 20px;
     right: -10px;
     top: -10px;
-    font-size: 24px;
-    background: #ffffff;
-    border-radius: 18px;
-    border: 1px solid #cfcece;
+    font-size: 16px;
+    background: $dark-blue;
+    color: $pure-white;
+
+    border-radius: 20px;
+    border: none;
+}
+
+.modal > .input {
+    padding: 10px;
+
+    border-radius: 5px;
+    border: solid 3px $grey;
+
+    font-family: $font-family-sans-century;
+
+    margin: 10px 0;
+}
+
+.button-save {
+    background-color: $light-green;
+    color: $pure-white;
+    border-radius: 5px;
+    border: none;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: $dark-green;
+    }
+}
+
+.button-delete-modal {
+    background-color: $red;
+    color: $pure-white;
+    border-radius: 5px;
+    border: none;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: $dark-red;
+    }
 }

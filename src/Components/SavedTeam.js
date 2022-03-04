@@ -34,9 +34,8 @@ const SavedTeam = (props) => {
                             })}
                         </div>
                     </div>
-                </div>
+                
 
-                <div className="savedTeamCard--players-column">
                     <div className="text--smaller text--muted savedTeamCard--textleft">
                         <div className="text--semibold">Midfielders</div>
 
@@ -64,7 +63,6 @@ const SavedTeam = (props) => {
                         </div>
                     </div>
                 </div>
-
 
 
             </div>

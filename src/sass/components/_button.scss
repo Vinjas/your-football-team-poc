@@ -35,3 +35,42 @@
         }
     }
 }
+
+.button-delete {
+    border: solid 2px $grey;
+    border-radius: 5px;
+
+    padding: 10px 20px;
+    color: $grey;
+
+    font-family: $font-family-sans-century;
+
+    background-color: transparent;
+    margin-top: 15px;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: $grey;
+        color: $pure-white;
+    }
+}
+
+.button-load {
+    border: none;
+    border-radius: 5px;
+
+    padding: 10px 20px;
+    margin-top: 15px;
+    color: $pure-white;
+
+    font-family: $font-family-sans-century;
+
+    background-color: $dark-green;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: $light-green;
+    }
+}

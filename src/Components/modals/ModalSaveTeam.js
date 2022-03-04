@@ -52,31 +52,31 @@ const ModalSaveTeam = () => {
 
     return (
         <Popup trigger={open => (
-            <button className="button">SAVE</button>)}
+            <button className="teamBar--save text--semibold">SAVE</button>)}
             modal
         >
             {close => (
-            <div className="modal">
+            <div className="modal text--center">
                 <button className="close" onClick={close}>
                     &times;
                 </button>
-                <div className="header"> Save your team </div>
-                    <div className="content">
+                <div className="header text--semibold"> Save your team </div>
+                    <div className="content text--small text--muted">
                     {' '}
                     Give your team a name!
                 </div>
 
-                <div>
+                <div className="text--small">
                     {dateNow}
                 </div>
 
-                <div>
-                    <input onChange={(e) => setInputName(e.target.value)} value={inputName}/>
-                </div>
+
+                    <input className="input" placeholder="Your team name" onChange={(e) => setInputName(e.target.value)} value={inputName}/>
+
 
                 <div className="actions">
                     <button
-                        className="button"
+                        className="button-save text--semibold"
                         onClick={() => {
                             isValidTeam();
                             close();

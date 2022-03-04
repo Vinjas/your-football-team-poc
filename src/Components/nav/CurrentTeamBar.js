@@ -14,7 +14,7 @@ const CurrentTeamBar = () => {
     const totalPlayers = defendersCount + midfieldersCount + attackersCount + goalkeepersCount;
 
     return (
-        <div className="teamBar text--semibold text--small">
+        <div className="teamBar text--small">
             <div>
                 <div>
                     Defenders: {defendersCount}/{teamRequirements.minDefenders}
@@ -22,9 +22,12 @@ const CurrentTeamBar = () => {
                 <div>
                     Midfielders: {midfieldersCount}/{teamRequirements.minMidfielders}
                 </div>
+                <div className="text--semibold">
+                    Total: {totalPlayers}/{teamRequirements.maxPlayers}
+                </div>
             </div>
 
-            <div>
+            <div className="text--right">
                 <div>
                     Attackers: {attackersCount}/{teamRequirements.minAttackers}
                 </div>
@@ -32,9 +35,7 @@ const CurrentTeamBar = () => {
                     Goalkeepers: {goalkeepersCount}/{teamRequirements.minGoalkeepers}
                 </div>
             </div>
-            <div>
-                Total: {totalPlayers}/{teamRequirements.maxPlayers}
-            </div>
+
 
             <ModalSaveTeam />
 

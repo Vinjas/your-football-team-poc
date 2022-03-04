@@ -12,4 +12,23 @@
     top: 0;
 
     z-index: 999;
+
+    &--save {
+        border: none;
+        border-radius: 5px;
+
+        padding: 0 15px;
+
+        color: $light-blue;
+        background-color: $pure-white;
+
+        font-family: $font-family-sans-century;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: $light-green;
+            color: $pure-white;
+        }
+    }
 }

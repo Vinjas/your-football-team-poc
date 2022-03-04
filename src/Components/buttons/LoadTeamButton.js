@@ -24,8 +24,8 @@ const LoadTeamButton = (props) => {
     }
 
     return (
-        <button onClick={() => loadTeam()}>
-            LOAD TEAM
+        <button className="button-load text--semibold" onClick={() => loadTeam()}>
+            LOAD
         </button>
     )
 }

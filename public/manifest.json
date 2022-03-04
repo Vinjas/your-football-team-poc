@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Your football team",
+  "name": "Your football team - PoC",
   "icons": [
     {
       "src": "favicon.ico",

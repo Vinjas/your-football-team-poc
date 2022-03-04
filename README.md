@@ -1,8 +1,41 @@
 # Your adidas Team - Proof of concept
 
-"Your adidas team” is going to be a web application where a user can create their own football team. 
+"Your adidas team” is going to be a web application where a user can create their own football team.
 
 For that, the user needs a way to display the selected players from the different national teams, assign them to the team, and to save the team.
+
+## Deployed App
+I used the free hosting and deployment site https://surge.sh/ for the temporary deployment of the app.
+
+It's currently deployed in the following link:
+**http://your-adidas-team-daniel-vinyas.surge.sh/**
+
+## Author notes
+I used a mobile first approach for the design.
+
+That means that in some bigger desktop resolutions the design may look streched. It's still fully functional but in the future the app may
+require a full redisign for desktop.
+
+I listed all the dependencies and libraries that I used below.
+
+The scripts configured in package.json may be used with npm or yarn.
+
+## Dependencies
+* react
+* react-dom
+* react-lazyload
+* react-redux
+* react-reveal
+* react-router-dom
+* react-scripts
+* reactjs-popup
+* redux
+* redux-toolkit
+* redux-persist
+* sass
+* web-vitals
+* font-awesome-react
+* jest-dom
 
 ## Functional requirements:
 
@@ -21,7 +54,7 @@ For that, the user needs a way to display the selected players from the differen
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm / yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -29,14 +62,22 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### `npm / yarn test`
 
 Launches the test runner in the interactive watch mode.\
 
-### `npm run build`
+### `npm / yarn run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+### `npm / yarn sass`
+Compiles all sass stylesheet into index.css automatically and keeps watching for future changes
+
+### `surge`
+For automatic deployment of the App I've choosen surge.sh for the simplicity and ease of use.
+
+It will require that the user input a domain and a username and password however.

@@ -8,6 +8,8 @@ import { store } from './redux/store';
 
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react'
+import { BrowserRouter } from "react-router-dom";
+
 
 import './index.css';
 import App from './App';
@@ -16,11 +18,11 @@ import reportWebVitals from './reportWebVitals';
 let persistor = persistStore(store)
 
 ReactDOM.render(
-    <Provider store={store}>
+
         <PersistGate loading={null} persistor={persistor}>
             <App />
-        </PersistGate>
-    </Provider>,
+        </PersistGate>,
+
 	document.getElementById('root')
 );
 

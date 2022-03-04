@@ -36,6 +36,17 @@ The scripts configured in package.json may be used with npm or yarn.
 * web-vitals
 * font-awesome-react
 * jest-dom
+* react testing library
+* Mock Service Worker
+
+## Testing
+To run the various test is necesary to execute the script `yarn test` or `npm test`, as defined in package.json.
+
+For testing, I mainly used Jest as a base, React Testing Library for the correct render and interaction of the componentes, and Mock Service Worker for introduce mock api calls while fetching.
+
+All the tests files are stored in the `tests` folder.
+
+For lack of time I didn't implement all the test that I've wanted, but there are some important test in place regarding Redux reducers and correct render and behaviour of the application DOM.
 
 ## Functional requirements:
 

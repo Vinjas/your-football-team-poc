@@ -12,26 +12,20 @@ const SavedTeam = (props) => {
                         <div className="text--semibold">Defenders</div>
 
                         <div className="savedTeamCard--players">
-                            {props.playersData.map((player, idx) => {
-                                if (player.position === "Defender") {
-                                    return (
-                                        <div key={player.name}>{player.name}</div>
-                                    )
-                                }
-                            })}
+                            {props.playersData
+                                .filter((player) => player.position === "Defender")
+                                .map((player) => <div key={player.name}>{player.name}</div>)
+                            }
                         </div>
                     </div>
                     <div className="text--smaller text--muted savedTeamCard--textright">
                         <div className=" text--semibold">Attakers</div>
 
                         <div className="savedTeamCard--players">
-                            {props.playersData.map((player, idx) => {
-                                if (player.position === "Attacker") {
-                                    return (
-                                        <div key={player.name}>{player.name}</div>
-                                    )
-                                }
-                            })}
+                            {props.playersData
+                                .filter((player) => player.position === "Attacker")
+                                .map((player) => <div key={player.name}>{player.name}</div>)
+                            }
                         </div>
                     </div>
 
@@ -39,26 +33,20 @@ const SavedTeam = (props) => {
                         <div className="text--semibold">Midfielders</div>
 
                         <div className="savedTeamCard--players">
-                            {props.playersData.map((player, idx) => {
-                                if (player.position === "Midfielder") {
-                                    return (
-                                        <div key={player.name}>{player.name}</div>
-                                    )
-                                }
-                            })}
+                            {props.playersData
+                                .filter((player) => player.position === "Midfielder")
+                                .map((player) => <div key={player.name}>{player.name}</div>)
+                            }
                         </div>
                     </div>
                     <div className="text--smaller text--muted savedTeamCard--textright">
                         <div className="text--semibold">Goalkeepers</div>
 
                         <div className="savedTeamCard--players">
-                            {props.playersData.map((player, idx) => {
-                                if (player.position === "Goalkeeper") {
-                                    return (
-                                        <div key={player.name}>{player.name}</div>
-                                    )
-                                }
-                            })}
+                            {props.playersData
+                                .filter((player) => player.position === "Goalkeeper")
+                                .map((player) => <div key={player.name}>{player.name}</div>)
+                            }
                         </div>
                     </div>
                 </div>

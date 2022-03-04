@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Fade } from "react-reveal";
 
 import PlayerCard from "../Components/PlayerCard";
@@ -7,15 +7,7 @@ import CurrentTeamBar from "../Components/nav/CurrentTeamBar";
 
 import { teamRequirements } from "../utils/teamRequirements";
 
-import { incrementDefender, decrementDefender, resetDefender } from "../redux/reducers/defendersCounterSlice";
-import { incrementMidfielders, decrementMidfielders, resetMidfielders } from "../redux/reducers/midfieldersCounterSlice";
-import { incrementAttackers, decrementAttackers, resetAttackers } from "../redux/reducers/attackersCounterSlice";
-import { incrementGoalkeepers, decrementGoalkeepers, resetGoalkeepers } from "../redux/reducers/goalkeepersCounterSlice";
-import { resetPlayersReducer } from "../redux/reducers/managePlayerSlice";
-
 const CurrentTeam = () => {
-    const dispatch = useDispatch();
-
     const defendersCount = useSelector((state) => state.defendersCounter.value);
     const midfieldersCount = useSelector((state) => state.midfieldersCounter.value);
     const attackersCount = useSelector((state) => state.attackersCounter.value);
@@ -40,8 +32,35 @@ const CurrentTeam = () => {
                     <h2 className="teamContainer--position text--semibold">Defenders {defendersCount} / {teamRequirements.minDefenders}</h2>
 
                     <div className="teamContainer--players-list">
-                    {playersData.map((player) => {
-                        if (player.position === "Defender") {
+                        {playersData
+                            .filter((player) => player.position === "Defender")
+                            .map((player) => {
+                                return (
+                                    <div>
+                                        <Fade>
+                                            <PlayerCard
+                                                key={player.id} {...player}
+                                                id={player.id}
+                                                name={player.name}
+                                                position={player.position}
+                                                active={true}
+                                            />
+                                        </Fade>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+
+                {/* MIDFIELDERS */}
+                <div>
+                    <h2 className="teamContainer--position text--semibold">Midfielders {midfieldersCount} / {teamRequirements.minMidfielders}</h2>
+
+                    <div className="teamContainer--players-list">
+                    {playersData
+                        .filter((player) => player.position === "Midfielder")
+                        .map((player) => {
                             return (
                                 <div>
                                     <Fade>
@@ -55,32 +74,8 @@ const CurrentTeam = () => {
                                     </Fade>
                                 </div>
                             )
-                        }
-                    })}
-                    </div>
-                </div>
-
-                {/* MIDFIELDERS */}
-                <div>
-                    <h2 className="teamContainer--position text--semibold">Midfielders {midfieldersCount} / {teamRequirements.minMidfielders}</h2>
-
-                    <div className="teamContainer--players-list">
-                    {playersData.map((player) => {
-                        if (player.position === "Midfielder") {
-                            return (
-                                <div>
-                                    <Fade>
-                                        <PlayerCard
-                                            key={player.id} {...player}
-                                            id={player.id}
-                                            name={player.name}
-                                            position={player.position}
-                                        />
-                                    </Fade>
-                                </div>
-                            )
-                        }
-                    })}
+                        })
+                    }
                     </div>
                 </div>
 
@@ -89,8 +84,9 @@ const CurrentTeam = () => {
                     <h2 className="teamContainer--position text--semibold">Attackers {attackersCount} / {teamRequirements.minAttackers}</h2>
 
                     <div className="teamContainer--players-list">
-                    {playersData.map((player) => {
-                        if (player.position === "Attacker") {
+                    {playersData
+                        .filter((player) => player.position === "Attacker")
+                        .map((player) => {
                             return (
                                 <div>
                                     <Fade>
@@ -99,14 +95,13 @@ const CurrentTeam = () => {
                                             id={player.id}
                                             name={player.name}
                                             position={player.position}
-                                            team={player.team}
-                                            teamFlag={player.teamFlag}
+                                            active={true}
                                         />
                                     </Fade>
                                 </div>
                             )
-                        }
-                    })}
+                        })
+                    }
                     </div>
                 </div>
 
@@ -115,8 +110,9 @@ const CurrentTeam = () => {
                     <h2 className="teamContainer--position text--semibold">Goalkeepers {goalkeepersCount} / {teamRequirements.minGoalkeepers}</h2>
 
                     <div className="teamContainer--players-list">
-                    {playersData.map((player) => {
-                        if (player.position === "Goalkeeper") {
+                    {playersData
+                        .filter((player) => player.position === "Goalkeeper")
+                        .map((player) => {
                             return (
                                 <div>
                                     <Fade>
@@ -125,12 +121,13 @@ const CurrentTeam = () => {
                                             id={player.id}
                                             name={player.name}
                                             position={player.position}
+                                            active={true}
                                         />
                                     </Fade>
                                 </div>
                             )
-                        }
-                    })}
+                        })
+                    }
                     </div>
                 </div>
 

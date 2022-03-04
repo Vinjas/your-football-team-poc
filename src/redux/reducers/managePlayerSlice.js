@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { teamRequirements } from '../../utils/teamRequirements';
 
 export const managePlayerSlice = createSlice({
     name: 'managePlayer',

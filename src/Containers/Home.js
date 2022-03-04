@@ -1,4 +1,4 @@
-import { Route, Routes, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Fade from 'react-reveal/Fade';
 
 import NavBar from '../Components/nav/NavBar';

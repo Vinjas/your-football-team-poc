@@ -1,14 +1,10 @@
 import { useNavigate } from "react-router-dom"
 
-import { useDispatch } from "react-redux";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faHouse, faFutbol, faUpload, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
     const navigate = useNavigate();
-
-    const dispatch = useDispatch();
 
     return (
         <div className="navBar">

@@ -6,7 +6,7 @@ import { incrementMidfielders, decrementMidfielders } from "../redux/reducers/mi
 import { incrementAttackers, decrementAttackers } from "../redux/reducers/attackersCounterSlice";
 import { incrementGoalkeepers, decrementGoalkeepers } from "../redux/reducers/goalkeepersCounterSlice";
 
-import { addPlayerReducer, removePlayerReducer, resetPlayersReducer } from "../redux/reducers/managePlayerSlice";
+import { addPlayerReducer, removePlayerReducer } from "../redux/reducers/managePlayerSlice";
 import { teamRequirements } from "../utils/teamRequirements";
 
 const PlayerCard = (props) => {
@@ -140,12 +140,12 @@ const PlayerCard = (props) => {
                     </div>
 
                     <div className="text--small">
-                        <div>
-                            {props.team}
+                        <div className="text--small">
+                            {props.position}
                         </div>
 
-                        <div>
-                            {props.position}
+                        <div className="text--smaller text--muted">
+                            {props.team}
                         </div>
                     </div>
                 </div>

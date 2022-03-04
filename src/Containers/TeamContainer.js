@@ -67,91 +67,95 @@ const TeamContainer = () => {
             <div>
                 <div className="teamContainer--position text--semibold">Defenders</div>
                     <div className="teamContainer--players-list">
-                    {players.map((player) => {
-                        if (player.position === "Defender") {
-                            return  (
-                            <LazyLoad key={player.id}>
-                                <Fade>
-                                    <PlayerCard
-                                        key={player.id} {...player}
-                                        id={player.id}
-                                        name={player.name}
-                                        position={player.position}
-                                        team={teamDetails.name}
-                                        teamFlag={teamDetails.crestUrl}
-                                        state={{ playersSameTeam: [playersSameTeam, setPlayersSameTeam] }}
-                                    />
-                                </Fade>
-                            </LazyLoad>
+                    {players
+                        .filter((player) => player.position === "Defender")
+                        .map((player) => {
+                            return (
+                                <LazyLoad key={player.id}>
+                                    <Fade>
+                                        <PlayerCard
+                                            key={player.id} {...player}
+                                            id={player.id}
+                                            name={player.name}
+                                            position={player.position}
+                                            team={teamDetails.name}
+                                            teamFlag={teamDetails.crestUrl}
+                                            state={{ playersSameTeam: [playersSameTeam, setPlayersSameTeam] }}
+                                        />
+                                    </Fade>
+                                </LazyLoad>
                             )
-                        }
-                    })}
+                        })
+                    }
                     </div>
                 <div className="teamContainer--position text--semibold">Midfielders</div>
                     <div className="teamContainer--players-list">
-                    {players.map((player) => {
-                        if (player.position === "Midfielder") {
-                            return  (
-                            <LazyLoad key={player.id}>
-                                <Fade>
-                                    <PlayerCard
-                                        key={player.id} {...player}
-                                        id={player.id}
-                                        name={player.name}
-                                        position={player.position}
-                                        team={teamDetails.name}
-                                        teamFlag={teamDetails.crestUrl}
-                                        state={{ playersSameTeam: [playersSameTeam, setPlayersSameTeam] }}
-                                    />
-                                </Fade>
-                            </LazyLoad>
-                            )
+                        {players
+                            .filter((player) => player.position === "Midfielder")
+                            .map((player) => {
+                                return (
+                                    <LazyLoad key={player.id}>
+                                        <Fade>
+                                            <PlayerCard
+                                                key={player.id} {...player}
+                                                id={player.id}
+                                                name={player.name}
+                                                position={player.position}
+                                                team={teamDetails.name}
+                                                teamFlag={teamDetails.crestUrl}
+                                                state={{ playersSameTeam: [playersSameTeam, setPlayersSameTeam] }}
+                                            />
+                                        </Fade>
+                                    </LazyLoad>
+                                )
+                            })
                         }
-                    })}
                     </div>
                 <div className="teamContainer--position text--semibold">Attackers</div>
                     <div className="teamContainer--players-list">
-                    {players.map((player) => {
-                        if (player.position === "Attacker") {
-                            return  (
-                            <LazyLoad key={player.id}>
-                                <Fade>
-                                    <PlayerCard
-                                        key={player.id} {...player}
-                                        id={player.id}
-                                        name={player.name}
-                                        position={player.position}
-                                        team={teamDetails.name}
-                                        teamFlag={teamDetails.crestUrl}
-                                        state={{ playersSameTeam: [playersSameTeam, setPlayersSameTeam] }}
-                                    />
-                                </Fade>
-                            </LazyLoad>
-                            )
+                        {players
+                            .filter((player) => player.position === "Attacker")
+                            .map((player) => {
+                                return (
+                                    <LazyLoad key={player.id}>
+                                        <Fade>
+                                            <PlayerCard
+                                                key={player.id} {...player}
+                                                id={player.id}
+                                                name={player.name}
+                                                position={player.position}
+                                                team={teamDetails.name}
+                                                teamFlag={teamDetails.crestUrl}
+                                                state={{ playersSameTeam: [playersSameTeam, setPlayersSameTeam] }}
+                                            />
+                                        </Fade>
+                                    </LazyLoad>
+                                )
+                            })
                         }
-                    })}
                     </div>
                 <div className="teamContainer--position text--semibold">Goalkeepers</div>
                     <div className="teamContainer--players-list">
-                    {players.map((player) => {
-                        if (player.position === "Goalkeeper") {
-                            return  (
-                            <LazyLoad key={player.id}>
-                                <Fade>
-                                    <PlayerCard
-                                        key={player.id} {...player}
-                                        id={player.id}
-                                        name={player.name}
-                                        position={player.position}
-                                        team={teamDetails.name}
-                                        teamFlag={teamDetails.crestUrl}
-                                        state={{ playersSameTeam: [playersSameTeam, setPlayersSameTeam] }}
-                                    />
-                                </Fade>
-                            </LazyLoad>
-                            )
+                        {players
+                                .filter((player) => player.position === "Goalkeeper")
+                                .map((player) => {
+                                    return (
+                                        <LazyLoad key={player.id}>
+                                            <Fade>
+                                                <PlayerCard
+                                                    key={player.id} {...player}
+                                                    id={player.id}
+                                                    name={player.name}
+                                                    position={player.position}
+                                                    team={teamDetails.name}
+                                                    teamFlag={teamDetails.crestUrl}
+                                                    state={{ playersSameTeam: [playersSameTeam, setPlayersSameTeam] }}
+                                                />
+                                            </Fade>
+                                        </LazyLoad>
+                                    )
+                                })
                         }
-                    })}
                     </div>
             </div>
 

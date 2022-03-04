@@ -11,13 +11,15 @@ const MyTeams = () => {
 
     return (
         <div className="myTeams">
-            <div className="home--above"></div>
+            <div>
+                <div className="home--above"></div>
 
-            <div className="home--header">
-                <h1 className="home--title text--bold text--white text--title">My Teams</h1>
+                <div className="home--header">
+                    <h1 className="home--title text--bold text--white text--title">My Teams</h1>
+                </div>
+
+                <div className="home--below"></div>
             </div>
-
-            <div className="home--below"></div>
 
             {savedTeams.map((team, idx) => {
                 return (

@@ -179,6 +179,10 @@ html, body, #root {
   background-color: #af4835;
 }
 
+.modal > .error {
+  color: #e7563c;
+}
+
 .button-main {
   border: none;
   color: #fff;

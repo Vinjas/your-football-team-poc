@@ -118,11 +118,11 @@ const PlayerCard = (props) => {
 
                     <div className="text--small">
                         <div>
-                            {props.team}
+                            {props.position}
                         </div>
 
-                        <div>
-                            {props.position}
+                        <div className="text--smaller text--muted">
+                            {props.team}
                         </div>
                     </div>
                 </div>

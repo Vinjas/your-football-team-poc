@@ -23,6 +23,7 @@ const ModalSaveTeam = () => {
     const dateNow = formatDate(new Date());
 
     const [inputName, setInputName] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const isValidTeam = () => {
         if (totalPlayers <= teamRequirements.maxPlayers
@@ -46,7 +47,7 @@ const ModalSaveTeam = () => {
             navigate("/my-teams")
         }
         else {
-            return alert("ERROR: TEAM COMPOSITION INVALID")
+            return setErrorMessage("TEAM COMPOSITION INVALID")
         }
     }
 
@@ -79,11 +80,14 @@ const ModalSaveTeam = () => {
                         className="button-save text--semibold"
                         onClick={() => {
                             isValidTeam();
-                            close();
                         }}
                         >
                         SAVE TEAM
                     </button>
+                </div>
+
+                <div className="error text--small text--bold">
+                    {errorMessage}
                 </div>
             </div>
             )}

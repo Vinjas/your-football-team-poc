@@ -24,7 +24,7 @@ const NewTeamButton = () => {
     }
 
     return (
-        <button className="button-main button-main--newTeam" onClick={() => createNewTeam()}>
+        <button className="button-main button-main--newTeam text--semibold" onClick={() => createNewTeam()}>
             CREATE NEW TEAM
         </button>
     )

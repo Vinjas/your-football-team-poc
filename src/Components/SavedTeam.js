@@ -34,7 +34,6 @@ const SavedTeam = (props) => {
                             })}
                         </div>
                     </div>
-                
 
                     <div className="text--smaller text--muted savedTeamCard--textleft">
                         <div className="text--semibold">Midfielders</div>

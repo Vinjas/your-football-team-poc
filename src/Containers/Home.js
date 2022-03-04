@@ -4,6 +4,9 @@ import Fade from 'react-reveal/Fade';
 import NavBar from '../Components/nav/NavBar';
 import NewTeamButton from '../Components/buttons/NewTeamButton';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFutbol } from "@fortawesome/free-solid-svg-icons";
+
 const Home = () => {
     const navigate = useNavigate();
 
@@ -13,13 +16,16 @@ const Home = () => {
                 <div>
                     <div className="home--above"></div>
                     <div className="home--header">
-                        <div className="home--title text--bold text--white text--title">Your adidas Team</div>
+                        <div className="home--title text--bold text--white text--title">
+                            {"Your adidas Team "}
+                            <FontAwesomeIcon className="text--icon" icon={faFutbol} />
+                            </div>
                     </div>
                     <div className="home--below"></div>
                 </div>
 
                 <div className="home--menu">
-                    <button className="button-main button-main--loadTeam" onClick={() => navigate("/my-teams")}>
+                    <button className="button-main button-main--loadTeam text--semibold" onClick={() => navigate("/my-teams")}>
                         MY TEAMS
                     </button>
 

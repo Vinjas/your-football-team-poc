@@ -36,14 +36,20 @@ const MyTeams = () => {
 
             <NewTeamButton />
 
-            {savedTeams.map((team) => {
+            {savedTeams.map((team, idx) => {
                 return (
                     <div>
                         <Fade bottom>
                             <SavedTeam
-                                key={team.date} {...team}
+                                key={team.name + team.date}
+                                id={team.name + team.date}
                                 name={team.name}
-                                players={team.playersData}
+                                date={team.date}
+                                playersData={team.playersData}
+                                defendersCount={team.defendersCount}
+                                attackersCount={team.attackersCount}
+                                goalkeepersCount={team.goalkeepersCount}
+                                midfieldersCount={team.midfieldersCount}
                             />
                         </Fade>
                     </div>

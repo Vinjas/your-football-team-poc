@@ -1,3 +1,4 @@
+import DeleteTeamButton from "./buttons/DeleteTeamButton";
 import LoadTeamButton from "./buttons/LoadTeamButton";
 
 const SavedTeam = (props) => {
@@ -6,14 +7,15 @@ const SavedTeam = (props) => {
             <div>
                 <h2>{props.name}</h2>
 
-                {props.playersData.map((player) => {
+                {props.playersData.map((player, idx) => {
                     return (
-                        <div>{player.name}</div>
+                        <div key={player.name}>{player.name}</div>
                     )
                 })}
             </div>
 
             <LoadTeamButton team={props} />
+            <DeleteTeamButton team={props}/>
         </div>
     )
 }

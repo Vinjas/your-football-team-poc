@@ -10,7 +10,9 @@ export const savedTeamsSlice = createSlice({
             state.value.push(action.payload)
         },
         deleteTeam: (state, action) => {
-            state.value.push(action.payload)
+            state.value = state.value.filter((team) => {
+                return (team.id) !== action.payload;
+            })
         },
         resetTeams: (state) => {
             state.value = []

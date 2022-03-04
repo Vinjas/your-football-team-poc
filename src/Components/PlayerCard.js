@@ -23,13 +23,30 @@ const PlayerCard = (props) => {
 
     const [inTeam, setInTeam] = useState(false);
 
+    const {
+        playersSameTeam: [playersSameTeam, setPlayersSameTeam]
+    } = {
+        playersSameTeam: useState(0),
+        ...(props.state || {})
+    }
+
     useEffect(() => {
+        setPlayersSameTeam(playersInSameTeam);
+
         return playersData.find((player) => {
             if (player.id === props.id) {
                 setInTeam(true)
             }
         })
-    }, [])
+    }, [useSelector((state) => state.managePlayer.value)])
+
+
+
+    const playersInSameTeam = () => {
+        return playersData.filter((player) => {
+            return player.team === props.team
+        }).length
+    }
 
     const playerObject = {
         id: props.id,
@@ -40,28 +57,22 @@ const PlayerCard = (props) => {
     }
 
     const addPlayer = () => {
+        if (totalPlayers < teamRequirements.maxPlayers && playersSameTeam < teamRequirements.maxSameTeam) {
+            dispatch(addPlayerReducer(playerObject));
+            setInTeam(true);
 
-        if (totalPlayers < teamRequirements.maxPlayers) {
             switch (props.position) {
                 case 'Defender':
                         dispatch(incrementDefender())
-                        dispatch(addPlayerReducer(playerObject));
-                        setInTeam(true);
                     break;
                 case 'Midfielder':
                         dispatch(incrementMidfielders())
-                        dispatch(addPlayerReducer(playerObject));
-                        setInTeam(true);
                     break;
                 case 'Attacker':
                         dispatch(incrementAttackers())
-                        dispatch(addPlayerReducer(playerObject));
-                        setInTeam(true);
                     break;
                 case 'Goalkeeper':
                         dispatch(incrementGoalkeepers())
-                        dispatch(addPlayerReducer(playerObject));
-                        setInTeam(true);
                     break;
                 default:
                     return;
@@ -112,13 +123,13 @@ const PlayerCard = (props) => {
             <div>
                 <button
                 className={inTeam ? 'player-card--button_inactive' : 'player-card--button'}
-                onClick={() => addPlayer()}>
+                onClick={() => {addPlayer()}}>
                     Add
                 </button>
 
                 <button
                 className={!inTeam ? 'player-card--button_inactive' : 'player-card--button'}
-                onClick={() => removePlayer()}>
+                onClick={() => {removePlayer()}}>
                     Remove
                 </button>
             </div>

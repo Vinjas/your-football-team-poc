@@ -18,6 +18,8 @@ const TeamCard = (props) => {
                         pathname: `/teams/${props.id}`
                     }
                 }>
+                    <img src={props.img}></img>
+
                     <h2>{props.name}</h2>
                 </Link>
             </div>

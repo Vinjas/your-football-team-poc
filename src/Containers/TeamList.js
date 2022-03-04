@@ -33,6 +33,7 @@ const TeamLists = () => {
                                     key={team.id} {...team}
                                     id={team.id}
                                     name={team.name}
+                                    img={team.crestUrl}
                                 />
                             </Fade>
                         </LazyLoad>

@@ -6,6 +6,7 @@ import { setAttackers } from "../../redux/reducers/attackersCounterSlice";
 import { setGoalkeepers } from "../../redux/reducers/goalkeepersCounterSlice";
 import { setMidfielders } from "../../redux/reducers/midfieldersCounterSlice";
 import { changeTeam } from "../../redux/reducers/managePlayerSlice";
+import { setName } from "../../redux/reducers/nameTeamSlice";
 
 
 const LoadTeamButton = (props) => {
@@ -18,6 +19,7 @@ const LoadTeamButton = (props) => {
         dispatch(setGoalkeepers(props.team.goalkeepersCount))
         dispatch(setMidfielders(props.team.midfieldersCount))
         dispatch(changeTeam(props.team.playersData))
+        dispatch(setName(props.team.name))
         navigate("/current-team")
     }
 

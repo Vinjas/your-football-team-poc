@@ -1,0 +1,15 @@
+.teamBar {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    background-color: $dark-blue;
+    color: $pure-white;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+    z-index: 999;
+}

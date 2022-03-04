@@ -1,0 +1,64 @@
+.text {
+    /* font-size */
+    &--smaller {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    &--small {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    &--medium {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    &--title {
+        font-size: 35px;
+    }
+
+    &--icon {
+        font-size: 25px;
+    }
+
+    /* font-weight */
+    &--semibold {
+        font-weight: 600 !important;
+    }
+
+    &--bold {
+        font-weight: bold;
+    }
+
+    /* colors */
+    &--muted {
+        color: $dark-grey;
+    }
+
+    &--black {
+        color: $black;
+    }
+
+    &--white {
+        color: $pure-white;
+    }
+
+    /* position */
+    &--center {
+        text-align: center;
+    }
+    &--left {
+        text-align: left;
+    }
+    &--right {
+        text-align: right;
+    }
+}
+
+.cursor {
+    &--pointer {
+        cursor: pointer;
+    }
+}

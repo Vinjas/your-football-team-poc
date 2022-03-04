@@ -5,27 +5,31 @@ import NavBar from '../Components/nav/NavBar';
 import NewTeamButton from '../Components/buttons/NewTeamButton';
 
 const Home = () => {
+    const navigate = useNavigate();
 
     return (
-        <div>
-            <Fade>
-                <h1>Your Adidas Team</h1>
-
+        <Fade>
+            <div className="home">
                 <div>
-                    <strong>
-                        <Link to="my-teams">My Teams</Link>
-                    </strong>
+                    <div className="home--above"></div>
+                    <div className="home--header">
+                        <div className="home--title text--bold text--white text--title">Your adidas Team</div>
+                    </div>
+                    <div className="home--below"></div>
                 </div>
 
-                <div>
+                <div className="home--menu">
+                    <button className="button-main button-main--loadTeam" onClick={() => navigate("/my-teams")}>
+                        MY TEAMS
+                    </button>
+
                     <NewTeamButton />
                 </div>
 
-            </Fade>
+                <NavBar  />
 
-            <NavBar />
-
-        </div>
+            </div>
+        </Fade>
     )
 }
 

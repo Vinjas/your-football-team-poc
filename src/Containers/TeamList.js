@@ -9,7 +9,7 @@ import CurrentTeamBar from "../Components/nav/CurrentTeamBar";
 
 const TeamLists = () => {
     const [teams, setTeams] = useState([]);
-    
+
     useEffect(() => {
         getSpainTeams()
         .then((data) => {
@@ -18,13 +18,16 @@ const TeamLists = () => {
     }, []);
 
     return (
-        <div>
+        <div className="teamList">
+            <div>
+                <CurrentTeamBar />
 
-            <CurrentTeamBar />
+                <div className="teamList--header">
+                    <h1>All Teams</h1>
+                </div>
+            </div>
 
-            <h1>Teams</h1>
-
-            <div className="">
+            <div className="teamList--cards">
                 {teams.map((team) => {
                     return  (
                         <LazyLoad key={team.id}>

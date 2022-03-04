@@ -103,35 +103,52 @@ const PlayerCard = (props) => {
     }
 
     return (
-        <div className={inTeam ? 'player-card player-card--inactive' : 'player-card'}>
-            <div>
-                <strong>{props.name}</strong>
-            </div>
+        <div className={inTeam ? 'player-card player-card--inactive' : 'player-card'} >
 
-            <div>
-                <img src={props.teamFlag} alt={props.team}></img>
-            </div>
-
-            <div>
-                {props.team}
-            </div>
-
-            <div>
-                {props.position}
-            </div>
-
-            <div>
-                <button
-                className={inTeam ? 'player-card--button_inactive' : 'player-card--button'}
+            <div className={inTeam ? 'player-card--button_inactive' : 'player-card--button'}
                 onClick={() => {addPlayer()}}>
-                    Add
-                </button>
+                <div>
+                    <img className="player-card--img" src={props.teamFlag} alt={props.team}></img>
+                </div>
 
-                <button
-                className={!inTeam ? 'player-card--button_inactive' : 'player-card--button'}
+                <div className="player-card--data text--medium text--center">
+                    <div>
+                        <strong>{props.name}</strong>
+                    </div>
+
+                    <div className="text--small">
+                        <div>
+                            {props.team}
+                        </div>
+
+                        <div>
+                            {props.position}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={!inTeam ? 'player-card--button_inactive' : 'player-card--button'}
                 onClick={() => {removePlayer()}}>
-                    Remove
-                </button>
+                <div>
+                    <img className="player-card--img" src={props.teamFlag} alt={props.team}></img>
+                </div>
+
+                <div className="player-card--data text--medium text--center">
+                    <div>
+                        <strong>{props.name}</strong>
+                    </div>
+
+                    <div className="text--small">
+                        <div>
+                            {props.team}
+                        </div>
+
+                        <div>
+                            {props.position}
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

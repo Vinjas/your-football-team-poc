@@ -1,28 +1,13 @@
-import { useLocation } from "react-router-dom";
-import { Route, Routes, Link } from "react-router-dom";
-import { useEffect, useState, useRef } from "react";
-
-import { normalizeURL } from "../utils/urlUtils";
+import { useNavigate } from "react-router-dom";
 
 const TeamCard = (props) => {
-    const paramURL = normalizeURL(props.name);
-    const location = useLocation();
+    const navigation = useNavigate();
 
-    const [teamDetails, setTeamDetails] = useState([]);
-    
     return (
-        <div>
-            <div>
-                <Link to={
-                    {
-                        pathname: `/teams/${props.id}`
-                    }
-                }>
-                    <img src={props.img}></img>
+        <div className="teamCard" onClick={() => navigation(`/teams/${props.id}`)}>
+            <img className="teamCard--img" src={props.img} alt={props.name}></img>
 
-                    <h2>{props.name}</h2>
-                </Link>
-            </div>
+            <div className="text--medium text--semibold text--muted text--center">{props.name}</div>
         </div>
     )
 }

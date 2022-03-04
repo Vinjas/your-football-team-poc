@@ -1,2 +1,21 @@
-@import "playerCard";
-@import "popup";
+/* base */
+@import "base/variables";
+@import "base/base";
+@import "base/typography";
+
+/* components */
+@import "components/playerCard";
+@import "components/popup";
+@import "components/button";
+@import "components/teamCard";
+@import "components/savedTeamCard";
+
+/* layout */
+@import "layout/navBar";
+@import "layout/teamBar";
+
+/* pager */
+@import "pages/home";
+@import "pages/teamList";
+@import "pages/teamContainer";
+@import "pages/myTeams";

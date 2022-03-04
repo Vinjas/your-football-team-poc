@@ -1,0 +1,37 @@
+.button-main {
+    border: none;
+
+    color: $pure-white;
+    background-color: $dark-blue;
+
+    width: 60%;
+    padding: 20px 0;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-family: $font-family-sans-century;
+
+    box-shadow: 0px 5px 15px -5px $black;
+
+    cursor: pointer;
+
+    &--loadTeam {
+        margin: 50px 0 15px 0;
+
+        &:hover {
+            background-color: $light-blue;
+        }
+
+    }
+
+    &--newTeam {
+        margin: 15px 0 50px 0;
+
+        background-color: $dark-green;
+
+        &:hover {
+            background-color: $light-green;
+        }
+    }
+}

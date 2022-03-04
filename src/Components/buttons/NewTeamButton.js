@@ -7,7 +7,7 @@ import { resetMidfielders } from "../../redux/reducers/midfieldersCounterSlice";
 import { resetAttackers } from "../../redux/reducers/attackersCounterSlice";
 import { resetGoalkeepers } from "../../redux/reducers/goalkeepersCounterSlice";
 import { resetPlayersReducer } from "../../redux/reducers/managePlayerSlice";
-
+import { setName } from "../../redux/reducers/nameTeamSlice";
 
 const NewTeamButton = () => {
     const dispatch = useDispatch();
@@ -19,11 +19,12 @@ const NewTeamButton = () => {
         dispatch(resetGoalkeepers())
         dispatch(resetMidfielders())
         dispatch(resetPlayersReducer())
+        dispatch(setName('My adidas Team'))
         navigate("/teams")
     }
 
     return (
-        <button onClick={() => createNewTeam()}>
+        <button className="button-main button-main--newTeam" onClick={() => createNewTeam()}>
             CREATE NEW TEAM
         </button>
     )

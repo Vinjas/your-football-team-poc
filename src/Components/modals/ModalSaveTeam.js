@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { saveTeam } from "../../redux/reducers/savedTeamsSlice";
 import { formatDate } from "../../utils/formatDate";
+import { setName } from "../../redux/reducers/nameTeamSlice";
 
 const ModalSaveTeam = () => {
     const dispatch = useDispatch();
@@ -29,8 +30,6 @@ const ModalSaveTeam = () => {
         && midfieldersCount >= teamRequirements.minMidfielders
         && attackersCount >= teamRequirements.minAttackers
         && goalkeepersCount >= teamRequirements.minGoalkeepers) {
-            alert("SUCCESS: TEAM SAVED")
-
             const teamObject = {
                 name: inputName ? inputName : `Saved Team ${dateNow}`,
                 id: (inputName ? inputName : `Saved Team ${dateNow}`) + dateNow,
@@ -43,7 +42,8 @@ const ModalSaveTeam = () => {
             }
 
             dispatch(saveTeam(teamObject))
-            navigate("/")
+            dispatch(setName(teamObject.name))
+            navigate("/my-teams")
         }
         else {
             return alert("ERROR: TEAM COMPOSITION INVALID")
@@ -52,7 +52,7 @@ const ModalSaveTeam = () => {
 
     return (
         <Popup trigger={open => (
-            <button className="button">SAVE TEAM</button>)}
+            <button className="button">SAVE</button>)}
             modal
         >
             {close => (
@@ -77,7 +77,10 @@ const ModalSaveTeam = () => {
                 <div className="actions">
                     <button
                         className="button"
-                        onClick={() => isValidTeam()}
+                        onClick={() => {
+                            isValidTeam();
+                            close();
+                        }}
                         >
                         SAVE TEAM
                     </button>

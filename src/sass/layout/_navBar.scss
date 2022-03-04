@@ -1,0 +1,48 @@
+.navBar {
+    color: $pure-white;
+    background-color: $dark-blue;
+    display: flex;
+    justify-content: center;
+
+    border-radius: 50px;
+    margin: 0 20px 25px 20px;
+    box-shadow: 0px 5px 15px -5px $black;
+
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 25px;
+
+    @media only screen and (min-width: $tablet) {
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
+
+        justify-content: space-around;
+
+        bottom: 0;
+    }
+
+    &--icon {
+        border: none;
+        border-radius: 100px;
+        padding: 10px 12px;
+        margin: 10px;
+
+        font-family: $font-family-sans-century;
+
+        background-color: transparent;
+        color: $light-blue;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: $light-blue;
+            color: $pure-white;
+        }
+
+        &__add {
+            background-color: $pure-white;
+            color: $light-blue;
+        }
+    }
+}

@@ -5,5 +5,4 @@ export const teamRequirements = {
     minAttackers: 2,
     minMidfielders: 4,
     minGoalkeepers: 2,
-    minCoaches: 1,
 }

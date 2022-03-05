@@ -10,6 +10,10 @@ I used the free hosting and deployment site https://surge.sh/ for the temporary 
 It's currently deployed in the following link:
 **https://your-adidas-team-dvt.surge.sh/**
 
+## Screenshots
+
+![Screenshots](/screenshots/screenshots.png?raw=true)
+
 ## Author notes
 I used a mobile first approach for the design.
 

@@ -1,14 +1,11 @@
-# Your adidas Team - Proof of concept
+# Your Football Team - Proof of concept
 
-"Your adidas team” is going to be a web application where a user can create their own football team.
+"Your Football Team” is going to be a web application where a user can create their own football team.
 
 For that, the user needs a way to display the selected players from the different national teams, assign them to the team, and to save the team.
 
 ## Deployed App
 I used the free hosting and deployment site https://surge.sh/ for the temporary deployment of the app.
-
-It's currently deployed in the following link:
-**https://your-adidas-team-dvt.surge.sh/**
 
 ## Screenshots
 
